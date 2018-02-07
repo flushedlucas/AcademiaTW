@@ -1,4 +1,6 @@
-package dia2;
+package dia3_lucas;
+
+import java.util.Iterator;
 
 import interfaces.IList;
 
@@ -144,6 +146,29 @@ public class CLinkedList<T> implements IList<T> {
 			}
 		}
 
+	}
+
+	public Iterator<T> iterator() {
+		return new CLinkedListIterator();
+	}
+
+	private class CLinkedListIterator implements Iterator<T> {
+		Node<T> pivot = head;
+
+		@Override
+		public boolean hasNext() {
+			if (pivot != null) {
+				return true;
+			}
+			return false;
+		}
+
+		@Override
+		public T next() {
+			T element = pivot.element;
+			pivot = pivot.next;
+			return element;
+		}
 	}
 
 }

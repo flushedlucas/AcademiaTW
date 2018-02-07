@@ -1,4 +1,4 @@
-package academia;
+package dia3_lucas;
 
 import java.util.Arrays;
 import java.util.Random;
